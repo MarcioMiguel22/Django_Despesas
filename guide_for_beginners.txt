@@ -1,0 +1,63 @@
+# GUIA PARA INICIANTES - DJANGO CONTAINER STARTER BOILERPLATE
+
+## O QUE É ESTE PROJETO?
+
+Este é um projeto inicial (boilerplate) para aplicações Django que estão prontas para serem containerizadas e implantadas. 
+Um "boilerplate" é um template pronto para uso que economiza tempo, pois já tem uma estrutura básica configurada.
+
+## ESTRUTURA DO PROJETO
+
+/django-container/
+├── .env.dev                 # Variáveis de ambiente para desenvolvimento
+├── compose.yaml             # Configuração do Docker Compose para o banco de dados
+├── Dockerfile               # Instruções para construir a imagem Docker
+├── gunicorn.conf.py         # Configuração do servidor Gunicorn
+├── README.md                # Documentação básica do projeto
+├── railway.json             # Configuração para implantação na plataforma Railway
+├── rav.yaml                 # Scripts automatizados para desenvolvimento
+├── requirements.txt         # Dependências de produção
+├── requirements.dev.txt     # Dependências de desenvolvimento
+└── src/                     # Código-fonte da aplicação Django
+    ├── cfehome/             # Projeto principal Django
+    ├── commando/            # Aplicação Django para comandos personalizados
+    ├── helpers/             # Utilidades (como carregamento de variáveis de ambiente)
+    ├── manage.py            # Script de gerenciamento do Django
+    ├── requirements/        # Arquivos de definição de dependências
+    ├── staticfiles/         # Arquivos estáticos
+    └── templates/           # Templates HTML
+
+## PRINCIPAIS COMPONENTES
+
+1. Django: Framework web de alto nível em Python
+2. Docker: Para containerização da aplicação
+3. Railway: Plataforma para implantação (deploy)
+4. PostgreSQL: Banco de dados relacional (configurado via Docker Compose)
+
+## COMO COMEÇAR
+
+### Requisitos prévios:
+- Python 3.12+
+- Docker e Docker Compose
+- Git
+
+### Configuração inicial:
+
+1. Clone o repositório para sua máquina local
+2. Crie um ambiente virtual:
+   ```
+   python -m venv venv
+   ```
+3. Ative o ambiente virtual:
+   - Windows: `venv\Scripts\activate`
+   - Linux/Mac: `source venv/bin/activate`
+4. Instale as dependências:
+   ```
+   pip install -r requirements.dev.txt
+   pip install -r requirements.txt
+   pip install python-decouple
+   ```
+5. Configure o arquivo .env.dev com suas configurações
+
+### Executando o projeto localmente:
+
+#### Usando o script automatizado:
